@@ -83,10 +83,13 @@ public class MainActivity extends AppCompatActivity {
 
     private String readFromFile() throws IOException {
         // Your readFromFile method implementation here
-        Log.e("MainActivity", "check file1");
+//        Log.e("MainActivity", "Check file path: " + getFilesDir() + "/lessons.json");
+
         File file = new File(getFilesDir() + "/lesson_data/lessons.json");
+
+//        File file = new File(getFilesDir(), "lessons.json");
         StringBuilder text = new StringBuilder();
-        Log.e("MainActivity", "check file2" + file);
+        Log.e("MainActivity", "File exists: " + file.exists());
         if (file.exists()) {
             //Log.e("MainActivity", "check file3" ;
             try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -94,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
                 while ((line = br.readLine()) != null) {
                     text.append(line).append("\n");
+                    Log.e("MainActivity", "Tracker" + text);
                 }
             } catch (IOException e) {
                 Log.e("MainActivity", "Error reading JSON file", e);
