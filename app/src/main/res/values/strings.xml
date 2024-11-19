@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CourseWork</string>
+    <string name="day_prompt">Select Day</string>
+    <string name="month_prompt">Select Month</string>
+    <string name="year_prompt">Select Year</string>
+    <string name="timeslot_prompt">Select Timeslot</string>
+
+</resources>
